@@ -1,4 +1,4 @@
-// import { getUser } from "@/lib/data";
+import { getUser } from "@/lib/data";
 import styles from "./postUser.module.css";
 import Image from "next/image";
 
@@ -13,16 +13,12 @@ import Image from "next/image";
 //   return res.json();
 // };
 
-const PostUser = async () => {
+const PostUser = async ({ userId }) => {
   // FETCH DATA WITH AN API
   // const user = await getData(userId);
 
   // FETCH DATA WITHOUT AN API
-  // const user = await getUser(userId);
-  const user = {
-    img: 'https://res.cloudinary.com/dxrvtimah/image/upload/v1705284807/thumbnail_empresario_alivia_o_stress_do_trabalho_com_meditacao_248d7df44f.jpg',
-    username: 'John Doe'
-  }
+  const user = await getUser(userId);
 
   return (
     <div className={styles.container}>
