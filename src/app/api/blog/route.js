@@ -11,5 +11,6 @@ export const GET = async () => {
   } catch (err) {
     console.log(err);
     throw new Error("Failed to fetch posts!");
+    
   }
 };
